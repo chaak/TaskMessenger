@@ -6,9 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
     private Button registerButton;
+    private Button loginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,12 +17,17 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         registerButton = (Button)findViewById(R.id.registerButton);
-        registerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
-                startActivity(intent);
-            }
-        });
+        loginButton = (Button)findViewById(R.id.loginButton);
+
+        registerButton.setOnClickListener(this);
+        loginButton.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        if(view == registerButton){
+            Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+            startActivity(intent);
+        }
     }
 }
