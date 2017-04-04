@@ -8,4 +8,6 @@
     <string name="userLogin">User login</string>
     <string name="userRegistration">User registration</string>
     <string name="logout">Logout</string>
+    <string name="send">Send</string>
+    <string name="addRoom">Add room</string>
 </resources>

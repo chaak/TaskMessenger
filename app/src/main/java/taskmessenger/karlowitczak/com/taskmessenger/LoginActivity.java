@@ -22,6 +22,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private EditText emailText, passwordText;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
+    public String userEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,10 +47,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void userLogin() {
-        String email = emailText.getText().toString().trim();
+        userEmail = emailText.getText().toString().trim();
         String password = passwordText.getText().toString().trim();
 
-        if (TextUtils.isEmpty(email)) {
+        if (TextUtils.isEmpty(userEmail)) {
             Toast.makeText(this, "Please, enter the email", Toast.LENGTH_LONG).show();
             return;
         }
@@ -62,7 +63,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         progressDialog.setMessage("Login user...");
         progressDialog.show();
 
-        firebaseAuth.signInWithEmailAndPassword(email, password)
+        firebaseAuth.signInWithEmailAndPassword(userEmail, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
