@@ -63,7 +63,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), NavigationActivity.class);
                         if (task.isSuccessful()) {
                             finish();
                             intent.putExtra("userName", email);
