@@ -38,7 +38,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     private ArrayAdapter<String> arrayAdapter;
     private ArrayList<String> listOfRooms = new ArrayList<>();
     private DatabaseReference root = FirebaseDatabase.getInstance().getReference().getRoot();
-    private String name;
+    private String userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,17 +47,19 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        if(firebaseAuth.getCurrentUser() == null){
+        retriveUserName();
+
+        if (firebaseAuth.getCurrentUser() == null) {
             finish();
             startActivity(new Intent(this, LoginActivity.class));
         }
 
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
-        addChatRoomButton = (Button)findViewById(R.id.addRoomButton);
-        logoutButton = (Button)findViewById(R.id.logoutButton);
-        roomName = (EditText)findViewById(R.id.roomNameEditText);
-        listView = (ListView)findViewById(R.id.listView);
+        addChatRoomButton = (Button) findViewById(R.id.addRoomButton);
+        logoutButton = (Button) findViewById(R.id.logoutButton);
+        roomName = (EditText) findViewById(R.id.roomNameEditText);
+        listView = (ListView) findViewById(R.id.listView);
 
         arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listOfRooms);
         listView.setAdapter(arrayAdapter);
@@ -73,7 +75,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 Iterator iterator = dataSnapshot.getChildren().iterator();
 
                 while (iterator.hasNext()) {
-                    set.add(((DataSnapshot)iterator.next()).getKey());
+                    set.add(((DataSnapshot) iterator.next()).getKey());
                 }
                 listOfRooms.clear();
                 listOfRooms.addAll(set);
@@ -86,16 +88,24 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             }
         });
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                Intent intent = new Intent(getApplicationContext(), ChatActivity.class);
-//                intent.putExtra("roomName", ((TextView)view).getText().toString());
-//                intent.putExtra("userName", name);
-//                startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), ChatActivity.class);
+                intent.putExtra("roomName", ((TextView) view).getText().toString());
+                intent.putExtra("userName", userName);
+                startActivity(intent);
             }
         });
+    }
+
+    private void retriveUserName() {
+        userName = getIntent().getExtras().get("userName").toString();
+        if (userName == null) {
+            finish();
+            startActivity(new Intent(this, LoginActivity.class));
+        }
     }
 
     @Override
@@ -105,7 +115,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             finish();
             startActivity(new Intent(this, LoginActivity.class));
         }
-        if(view == addChatRoomButton){
+        if (view == addChatRoomButton) {
             Map<String, Object> map = new HashMap<String, Object>();
             map.put(roomName.getText().toString(), " ");
             root.updateChildren(map);

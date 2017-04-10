@@ -23,6 +23,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private EditText passwordText, emailText;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
+    public String email, password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +40,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void registerUser() {
-        String email = emailText.getText().toString().trim();
-        String password = passwordText.getText().toString().trim();
+        email = emailText.getText().toString().trim();
+        password = passwordText.getText().toString().trim();
 
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(this, "Please, enter the email", Toast.LENGTH_LONG).show();
@@ -52,6 +53,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             return;
         }
 
+
+        //startActivity(intent);
+
         progressDialog.setMessage("Registering user...");
         progressDialog.show();
 
@@ -59,9 +63,11 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
                         if (task.isSuccessful()) {
                             finish();
-                            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                            intent.putExtra("userName", email);
+                            startActivity(intent);
                         } else {
                             Toast.makeText(RegisterActivity.this, "Could not register. Please try again", Toast.LENGTH_LONG).show();
                         }

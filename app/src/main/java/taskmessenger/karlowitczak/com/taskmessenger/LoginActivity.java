@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -31,10 +32,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        if (firebaseAuth.getCurrentUser() != null) {
-            finish();
-            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
-        }
+//        if (firebaseAuth.getCurrentUser() != null) {
+//            finish();
+//            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+//        }
 
         progressDialog = new ProgressDialog(this);
         registerButton = (Button) findViewById(R.id.registerButton);
@@ -68,10 +69,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         progressDialog.dismiss();
-
+                        Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
                         if (task.isSuccessful()) {
                             finish();
-                            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                            intent.putExtra("userName", userEmail);
+                            startActivity(intent);
                         }
                     }
                 });
