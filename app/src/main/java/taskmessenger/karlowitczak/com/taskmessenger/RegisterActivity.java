@@ -20,10 +20,10 @@ import com.google.firebase.auth.FirebaseAuth;
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button registerButton;
-    private EditText passwordText, emailText;
+    private EditText passwordText, emailText, passwordText2;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
-    public String email, password;
+    public String email, password, password2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         registerButton = (Button) findViewById(R.id.registerButton);
         emailText = (EditText) findViewById(R.id.email);
         passwordText = (EditText) findViewById(R.id.pwd);
+        passwordText2 = (EditText) findViewById(R.id.pwd2);
 
         registerButton.setOnClickListener(this);
     }
@@ -42,6 +43,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private void registerUser() {
         email = emailText.getText().toString().trim();
         password = passwordText.getText().toString().trim();
+        password2 = passwordText2.getText().toString().trim();
 
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(this, "Please, enter the email", Toast.LENGTH_LONG).show();
@@ -53,8 +55,15 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             return;
         }
 
+        if (TextUtils.isEmpty(password2)){
+            Toast.makeText(this, "Please, repeat the password", Toast.LENGTH_LONG).show();
+            return;
+        }
 
-        //startActivity(intent);
+        if(!TextUtils.equals(password, password2)){
+            Toast.makeText(this, "Repeated password is not the same", Toast.LENGTH_LONG).show();
+            return;
+        }
 
         progressDialog.setMessage("Registering user...");
         progressDialog.show();
@@ -63,7 +72,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), NavigationActivity.class);
                         if (task.isSuccessful()) {
                             finish();
                             intent.putExtra("userName", email);
