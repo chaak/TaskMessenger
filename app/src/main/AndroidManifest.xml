@@ -10,6 +10,13 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
+=======
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".ChatActivity" />
+>>>>>>> 5ab25db3d8af25520fdf100bb015f2a470a66c85
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,9 +24,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".ChatActivity" />
+=======
+>>>>>>> 5ab25db3d8af25520fdf100bb015f2a470a66c85
         <activity
             android:name=".NavigationActivity"
             android:label="@string/title_activity_navigation"

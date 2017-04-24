@@ -2,7 +2,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     tools:context="taskmessenger.karlowitczak.com.taskmessenger.TaskMenu">
+=======
+    tools:context="taskmessenger.karlowitczak.com.taskmessenger.TaskMenuFragment">
+>>>>>>> 5ab25db3d8af25520fdf100bb015f2a470a66c85
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

@@ -1,7 +1,15 @@
 package taskmessenger.karlowitczak.com.taskmessenger;
 
+<<<<<<< HEAD
 import android.*;
 import android.content.pm.PackageManager;
+=======
+import android.Manifest;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+>>>>>>> 5ab25db3d8af25520fdf100bb015f2a470a66c85
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -23,9 +31,19 @@ import android.view.ViewGroup;
 
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+<<<<<<< HEAD
 import android.widget.TextView;
 
 public class NavigationActivity extends AppCompatActivity {
+=======
+
+import taskmessenger.karlowitczak.com.taskmessenger.ChatMenuFragment;
+import taskmessenger.karlowitczak.com.taskmessenger.R;
+import taskmessenger.karlowitczak.com.taskmessenger.TaskMenuFragment;
+
+public class NavigationActivity extends AppCompatActivity {
+
+>>>>>>> 5ab25db3d8af25520fdf100bb015f2a470a66c85
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -48,7 +66,12 @@ public class NavigationActivity extends AppCompatActivity {
 
         checkInternetConnection();
 
+<<<<<<< HEAD
 
+=======
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+>>>>>>> 5ab25db3d8af25520fdf100bb015f2a470a66c85
         // Create the adapter that will return a fragment for each of the two
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -60,8 +83,19 @@ public class NavigationActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
+<<<<<<< HEAD
 
 
+=======
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+>>>>>>> 5ab25db3d8af25520fdf100bb015f2a470a66c85
 
 
     }
@@ -122,6 +156,7 @@ public class NavigationActivity extends AppCompatActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
 
+<<<<<<< HEAD
 
 //            currentView = inflater.inflate(R.layout.fragment_navigation, container, false);
 //
@@ -135,6 +170,8 @@ public class NavigationActivity extends AppCompatActivity {
 //                    names
 //            );
 //            chatListView.setAdapter(listViewAdapter);
+=======
+>>>>>>> 5ab25db3d8af25520fdf100bb015f2a470a66c85
             return currentView;
         }
     }
@@ -143,10 +180,17 @@ public class NavigationActivity extends AppCompatActivity {
 
     public void checkInternetConnection(){
         int permissionCheck = ContextCompat.checkSelfPermission(this,
+<<<<<<< HEAD
                 android.Manifest.permission.ACCESS_NETWORK_STATE);
 
         ActivityCompat.requestPermissions(this,
                 new String[]{android.Manifest.permission.ACCESS_NETWORK_STATE},
+=======
+                Manifest.permission.ACCESS_NETWORK_STATE);
+
+        ActivityCompat.requestPermissions(this,
+                new String[]{Manifest.permission.ACCESS_NETWORK_STATE},
+>>>>>>> 5ab25db3d8af25520fdf100bb015f2a470a66c85
                 MY_PERMISSIONS_REQUEST_ACCESS_NETWORK_STATE);
 
 //        ConnectivityManager check = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
@@ -195,9 +239,15 @@ public class NavigationActivity extends AppCompatActivity {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
             if (position == 0) {
+<<<<<<< HEAD
                 return ChatMenu.newInstance(position + 1);
             } else {
                 return TaskMenu.newInstance(position + 1);
+=======
+                return ChatMenuFragment.newInstance(position + 1);
+            } else {
+                return TaskMenuFragment.newInstance(position + 1);
+>>>>>>> 5ab25db3d8af25520fdf100bb015f2a470a66c85
             }
 
         }

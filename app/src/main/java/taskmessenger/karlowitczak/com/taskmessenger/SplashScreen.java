@@ -5,9 +5,16 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+<<<<<<< HEAD
 public class SplashScreen extends AppCompatActivity {
 
     private static int SPLASH_TIME_OUT = 2000;
+=======
+
+public class SplashScreen extends AppCompatActivity {
+
+    private static int SPLASH_TIME_OUT = 4000;
+>>>>>>> 5ab25db3d8af25520fdf100bb015f2a470a66c85
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,4 +30,8 @@ public class SplashScreen extends AppCompatActivity {
             }
         }, SPLASH_TIME_OUT);
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 5ab25db3d8af25520fdf100bb015f2a470a66c85

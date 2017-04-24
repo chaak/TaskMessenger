@@ -11,6 +11,7 @@
     <string name="send">Send</string>
     <string name="addRoom">Add room</string>
     <string name="sendButton">Send</string>
+<<<<<<< HEAD
     <string name="loginButton">Login</string>
     <string name="registerButton">Don\'t have an account? Sign Up!</string>
     <string name="passwordText">Password</string>
@@ -19,6 +20,8 @@
     <string name="passwordEditText">Password</string>
     <string name="repeatPwdText">Repeat Password</string>
     <string name="sumbitButtonText">Submit</string>
+=======
+>>>>>>> 5ab25db3d8af25520fdf100bb015f2a470a66c85
     <string name="title_activity_navigation">NavigationActivity</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
