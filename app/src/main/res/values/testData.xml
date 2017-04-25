@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="myDataList">
+        <item>Jakub</item>
+        <item>Tadek</item>
+        <item>Piotrek</item>
+        <item>Amadeusz</item>
+        <item>Mocart</item>
+        <item>Trzeci</item>
+        <item>Wielki</item>
+    </string-array>
+
+    <string-array name="taskStatus">
+        <item>To do</item>
+        <item>In progress</item>
+        <item>Done</item>
+    </string-array>
+
+</resources>

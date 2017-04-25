@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="#ffffff"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:id="@+id/profilePic"
+            android:src="@drawable/template_profile_pic"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/textView_name"
+            android:layout_toLeftOf="@+id/textView_name"
+            android:layout_gravity="center_vertical" />
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/textView_name"
+            android:textSize="25dp"
+            android:layout_alignBottom="@+id/statusIcon"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10px" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="72px"
+            android:id="@+id/statusIcon"
+            android:src="@drawable/active_icon"
+            android:layout_alignBottom="@+id/profilePic"
+            android:layout_toEndOf="@+id/textView_name"
+            android:layout_toRightOf="@+id/textView_name"
+            android:layout_gravity="center_vertical" />
+    </TableRow>
+
+</RelativeLayout>
