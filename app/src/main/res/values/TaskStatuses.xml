@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="taskStatus">
+        <item>Unassigned</item>
+        <item>To do</item>
+        <item>In progress</item>
+        <item>Done</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/popup_1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="10sp" >
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|bottom">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/newRoomTextEdit"
+            android:layout_weight="1"
+            android:hint="@string/newRoomPlaceholder" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/closeRoomDialog"
+            android:src="@android:drawable/ic_delete"
+            android:background="#00ffffff"
+            android:tint="@color/colorPrimaryDark" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/addRoomButton"
+            android:text="@string/addRoomDialogButton"
+            android:layout_gravity="bottom"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="#ffffff" />
+    </TableRow>
+
+</LinearLayout>

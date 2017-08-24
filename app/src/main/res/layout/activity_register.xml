@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="karlowitczak.com.trashball.SignUpActivity"
+    android:gravity="center_vertical">
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="64dp"
+        android:ems="10"
+        android:hint="@string/emailEdittext"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/round_corner_edit_text"
+        android:backgroundTint="@color/textFieldLoginBackground"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff" />
+
+    <EditText
+        android:id="@+id/pwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/email"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="@string/passwordEditText"
+        android:inputType="textPassword"
+        android:background="@drawable/round_corner_edit_text"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/textFieldLoginBackground"
+        android:textColorHint="#ffffff"
+        android:textColor="#ffffff" />
+
+    <EditText
+        android:id="@+id/pwd2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pwd"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="@string/repeatPwdText"
+        android:inputType="textPassword"
+        android:background="@drawable/round_corner_edit_text"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/textFieldLoginBackground"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff" />
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pwd2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/submitButtonText"
+        android:textColor="#ffffff"
+        android:backgroundTint="@color/buttonDefault" />
+
+    <Button
+        android:id="@+id/registerBackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_button"
+        android:text="@string/registerBackButtonText"
+        android:textColor="#ffffff"
+        android:backgroundTint="@color/buttonDefault"
+        android:layout_below="@+id/registerButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
+</RelativeLayout>

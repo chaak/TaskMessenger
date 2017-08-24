@@ -1,0 +1,27 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <!-- NOTE: Hide buttons to simplify the UI. Users can touch outside the dialog to
+         dismiss it. -->
+    <!-- NOTE: ListPreference's summary should be set to its value by the activity code. -->
+    <ListPreference
+        android:defaultValue="1"
+        android:entries="@array/pref_message_color_list_titles"
+        android:entryValues="@array/pref_message_color_list_values"
+        android:key="PREF_YOUR_MESSAGE_COLOR"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="@string/pref_title_your_message_color" />
+
+    <ListPreference
+        android:defaultValue="-1"
+        android:entries="@array/pref_message_color_list_titles"
+        android:entryValues="@array/pref_message_color_list_values"
+        android:key="PREF_FRIEND_MESSAGE_COLOR"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="@string/pref_title_friend_message_color" />
+
+
+</PreferenceScreen>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/blue_down_border"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/back_button"
+            android:src="@drawable/abc_ic_ab_back_material"
+            android:layout_gravity="start"
+            android:background="#00ffffff"
+            android:contentDescription="backButton"
+            android:tint="@color/textDefault" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/room_name"
+            android:textColor="@color/textDefault"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/scrollView"
+        android:background="#ffffff"
+        android:layout_below="@+id/my_toolbar"
+        android:layout_above="@+id/tableRow">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/sendButton"
+            android:id="@+id/messagesWindow">
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/tableRow"
+        android:background="@color/colorPrimaryDark"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true"
+        android:weightSum="1">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:id="@+id/messageInput"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/round_corner_edit_text"
+            android:hint="@string/typeMessagePlaceholder"
+            android:layout_toLeftOf="@+id/sendButton"
+            android:layout_toStartOf="@+id/sendButton"
+            android:layout_alignTop="@+id/sendButton"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.99"
+            android:layout_marginLeft="10dp"
+            android:backgroundTint="#ffffff" />
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/sendButton"
+            android:src="@android:drawable/ic_menu_send"
+            android:background="#00ffffff"
+            android:tint="#ffffff"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </TableRow>
+
+</RelativeLayout>

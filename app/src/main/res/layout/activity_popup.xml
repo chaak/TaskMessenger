@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/popup_1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="10sp">
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/closeButton"
+        android:src="@android:drawable/ic_delete"
+        android:background="#00ffffff"
+        android:tint="@color/colorPrimaryDark"
+        android:layout_gravity="right" />
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|bottom">
+
+        <EditText
+            android:id="@+id/taskTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/taskTitleHint"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/taskDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/taskDecHint"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </TableRow>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/assignedUser"
+        android:id="@+id/assignUserTitle"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp" />
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Spinner
+            android:id="@+id/assignPersonSpinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+    </TableRow>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/pickTaskState"
+        android:id="@+id/taskStatusTitle"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp" />
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Spinner
+            android:id="@+id/taskStatusSpinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp" />
+    </TableRow>
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/acceptButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/addButton"
+            android:textColor="#ffffff" />
+    </TableRow>
+
+</LinearLayout>
+

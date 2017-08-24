@@ -1,3 +1,79 @@
 <resources>
+    <string name="facebook_app_id">1470169059701862</string>
     <string name="app_name">TaskMessenger</string>
+    <string name="logout">Logout</string>
+    <string name="send">Send</string>
+    <string name="sendButton">Send</string>
+    <string name="loginButton">Login</string>
+    <string name="registerButton">Don\'t have an account? Sign Up!</string>
+    <string name="passwordText">Password</string>
+    <string name="emailText">E-mail</string>
+    <string name="emailEdittext">E-mail</string>
+    <string name="passwordEditText">Password</string>
+    <string name="repeatPwdText">Repeat Password</string>
+    <string name="submitButtonText">Submit</string>
+    <string name="action_settings">Settings</string>
+    <string name="chatNavigationTitle">Chat</string>
+    <string name="taskManagerNavigationTitle">Task Manager</string>
+    <string name="addRoomDialogButton">Add room</string>
+    <string name="newRoomPlaceholder">New room name</string>
+    <string name="newRoomAddedToast">New room successfully added!</string>
+    <string name="typeMessagePlaceholder">Type your message..</string>
+    <string name="searchRoomPlaceholder">Search room</string>
+    <string name="enterPasswordToast">Please, enter the password</string>
+    <string name="enterEmailToast">Please, enter the e-mail</string>
+    <string name="repeatPasswordToast">Please, repeat the password</string>
+    <string name="mismatchingPasswordsToast">Passwords don\'t match</string>
+    <string name="loggingUser">Logging user…</string>
+    <string name="registeringUser">Registering user…</string>
+    <string name="cannotRegisterToast">Could not register. Please try again</string>
+    <string name="registerBackButtonText">Go back</string>
+    <string name="action_logout">Logout</string>
+    <string name="title_activity_general_settings">GeneralSettings</string>
+    <string name ="lightBlue">Light Blue</string>
+    <string name ="red">Red</string>
+    <string name ="deepPurple">Purple</string>
+    <string name ="addTaskText">Add task</string>
+    <string name="taskTitleHint">Task title</string>
+    <string name="taskDecHint">Task description</string>
+    <string name="closeText">Close</string>
+    <string name="addButton">Add task</string>
+    <string name="searchTaskPlaceholder">Search task</string>
+    <string name="shareText">Share on Facebook</string>
+    <string name="confirmChangesText">Confirm changes</string>
+    <string name="removeTask">Remove task</string>
+    <string name="pickTaskState">Pick task state</string>
+    <string name="assignedUser">Pick someone to perform the task</string>
+    <string name="taskStateTitle">Task state</string>
+    <string name="performer">Performer</string>
+    <string name="unassigned">Unassigned</string>
+    <string name="toDo">To do</string>
+    <string name="done">Done</string>
+    <string name="inProgress">In progress</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- General settings titles -->
+    <string name="pref_title_your_message_color">Your messages background color</string>
+    <string name="pref_title_friend_message_color">Incoming messages background color</string>
+
+
+
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+
+    <string-array name="pref_message_color_list_titles">
+        <item>@string/lightBlue</item>
+        <item>@string/red</item>
+        <item>@string/deepPurple</item>
+    </string-array>
+    <string-array name="pref_message_color_list_values">
+        <item >1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+
 </resources>
